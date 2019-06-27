@@ -1,4 +1,4 @@
-package com.okres.science;
+package com.okres.karatsuba;
 
 public class Main {
 
@@ -9,8 +9,8 @@ public class Main {
     private static int karatsuba(int x, int y) {
 
         int n = Math.max(
-                Integer.valueOf(x).toString().length(),
-                Integer.valueOf(y).toString().length());
+                Integer.toString(x).length(),
+                Integer.toString(y).length());
         if (n == 1) {
             return x * y;
         } else {
@@ -30,7 +30,7 @@ public class Main {
             int pq = karatsuba(p, q);
 
             int abcd = pq - ac - bd;
-            return (int) (Math.pow(10, n) * ac + Math.pow(10, n / 2) * abcd + bd);
+            return (int) ((Math.pow(10, 2 * m) * ac) + (Math.pow(10, m) * abcd) + bd);
         }
 
 
